@@ -6,13 +6,15 @@
         <cardGroup />
     </div>
     <div class="footer">
-        <p><strong>intro</strong></p>
-        <p @click="controlScreen"><strong>{{ screenController }}</strong></p>
+        <p @click="controlIntro">intro</p>
+        <p @click="controlScreen">{{ screenController }}</p>
     </div>
+    <intro v-if="isIntro" />
 </template>
 
 <script setup>
 import { ref } from 'vue'
+import intro from './intro.vue'
 import screenfull from "screenfull";
 import cardGroup from '../components/cardGroup.vue'
 
@@ -26,20 +28,37 @@ function controlScreen() {
         screenController.value = 'full screen';
     }
 }
+
+let isIntro = ref(false);
+function controlIntro() {
+    isIntro.value = !isIntro.value;
+    console.log(isIntro.value);
+}
+
 </script>
 
 <style scoped>
 @keyframes fade {
-  from {opacity: 0} 
-  to {opacity: 1}
+    from {
+        opacity: 0
+    }
+
+    to {
+        opacity: 1
+    }
 }
+
 .logoContainer {
+    z-index: 2;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
     user-select: none;
     padding-top: 8vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    animation: fade 1.5s ease-in-out;
+    animation: fade 1s ease-in-out;
 }
 
 .logo {
@@ -54,6 +73,7 @@ function controlScreen() {
 }
 
 .footer {
+    z-index: 1;
     user-select: none;
     display: flex;
     justify-content: center;
@@ -69,6 +89,7 @@ function controlScreen() {
     margin: 1vw 0.5vw;
     color: #ffffff;
     font-size: 1.3vh;
+    font-weight: 900;
     border: none;
     background-color: #141414;
     transition: color 0.5s ease-in-out;
