@@ -1,19 +1,22 @@
 <template>
     <div class="logoContainer">
-        <a href="https://github.com/Mengbooo"><img src="../assets/logo.jpg" alt="Bolaxious'demosite" class="logo"></a>
+        <a href="https://github.com/Mengbooo" target="_blank"><img src="../assets/logo.jpg" alt="Bolaxious'demosite" class="logo"></a>
     </div>
     <div class="cardGroup">
         <cardGroup />
     </div>
     <div class="footer">
-        <p @click="controlIntro">intro</p>
+        <p @click="openIntro">intro</p>
         <p @click="controlScreen">{{ screenController }}</p>
     </div>
-    <intro v-if="isIntro" />
+    <transition name="fade">
+        <intro v-if="isIntro" />
+    </transition>
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref,computed } from 'vue'
+import tableStore from '../stores/table'
 import intro from './intro.vue'
 import screenfull from "screenfull";
 import cardGroup from '../components/cardGroup.vue'
@@ -27,17 +30,40 @@ function controlScreen() {
         screenfull.exit();
         screenController.value = 'full screen';
     }
+} 
+
+const openIntro = () => {
+    tableStore().controlIntro();
 }
 
-let isIntro = ref(false);
-function controlIntro() {
-    isIntro.value = !isIntro.value;
-    console.log(isIntro.value);
-}
-
+let isIntro = computed(() => {
+    return tableStore().isIntro;
+});
 </script>
 
 <style scoped>
+
+/* 淡入 */
+.fade-enter-from {
+    opacity: 0;
+}
+.fade-enter-to {
+    opacity: 1;
+}
+.fade-enter-active {
+    transition: opacity 1s ease-in-out;
+}
+
+/* 淡出 */
+.fade-leave-from {
+    opacity: 1;
+}
+.fade-leave-to {
+    opacity: 0;
+}
+.fade-leave-active {
+    transition: opacity 1s ease-in-out;
+}
 @keyframes fade {
     from {
         opacity: 0
