@@ -6,6 +6,7 @@
 ### update 5/29
 - 部署到了自定义域名！bemosite.fun
 - 简单地写了一下Intro部分
+![image](https://github.com/Mengbooo/DemoSite/assets/143786942/a5c14107-f429-42d7-a091-a0525a7c0db2)
 
 # TODO：
 - 搭建/使用umami监测来访人数！
