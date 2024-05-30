@@ -8,6 +8,8 @@
 - 简单地写了一下Intro部分
 ![image](https://github.com/Mengbooo/DemoSite/assets/143786942/a5c14107-f429-42d7-a091-a0525a7c0db2)
 
+### upadte 5/30 
+- umami需要我买云服务器，看看能不能改用webtracing实现同样的方法
 # TODO：
 - 搭建/使用umami监测来访人数！
 - 做卡牌圆环！
