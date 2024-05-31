@@ -1,25 +1,60 @@
 <template>
     <div class="mask">
+
         <div class="introBox">
             <div class="mailContent">
+                <transition name="fade">
+                    <div class="copyInformation" v-if="isAlertShow_1">
+                        <svg t="1717159574270" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                            xmlns="http://www.w3.org/2000/svg" p-id="4263"
+                            data-spm-anchor-id="a313x.search_index.0.i0.4a633a81JOCT86">
+                            <path
+                                d="M720 192h-544A80.096 80.096 0 0 0 96 272v608C96 924.128 131.904 960 176 960h544c44.128 0 80-35.872 80-80v-608C800 227.904 764.128 192 720 192z m16 688c0 8.8-7.2 16-16 16h-544a16 16 0 0 1-16-16v-608a16 16 0 0 1 16-16h544a16 16 0 0 1 16 16v608z"
+                                p-id="4264"></path>
+                            <path
+                                d="M848 64h-544a32 32 0 0 0 0 64h544a16 16 0 0 1 16 16v608a32 32 0 1 0 64 0v-608C928 99.904 892.128 64 848 64z"
+                                p-id="4265"></path>
+                            <path
+                                d="M608 360H288a32 32 0 0 0 0 64h320a32 32 0 1 0 0-64zM608 520H288a32 32 0 1 0 0 64h320a32 32 0 1 0 0-64zM480 678.656H288a32 32 0 1 0 0 64h192a32 32 0 1 0 0-64z"
+                                p-id="4266"></path>
+                        </svg>
+                    </div>
+                </transition>
                 <svg t="1716822844652" class="icon" viewBox="0 0 1024 1024" version="1.1"
-                    xmlns="http://www.w3.org/2000/svg" p-id="8404">
+                    xmlns="http://www.w3.org/2000/svg" p-id="8404" @click="copyEmail">
                     <path
                         d="M884.363636 139.636364a116.363636 116.363636 0 0 1 116.363637 116.363636v535.272727a116.363636 116.363636 0 0 1-116.363637 116.363637H139.636364a116.363636 116.363636 0 0 1-116.363637-116.363637V256a116.363636 116.363636 0 0 1 116.363637-116.363636zM116.363636 269.661091V791.272727a23.272727 23.272727 0 0 0 23.272728 23.272728h744.727272a23.272727 23.272727 0 0 0 23.272728-23.272728V270.801455L581.282909 551.330909a93.090909 93.090909 0 0 1-115.618909 4.561455l-4.096-3.165091L116.363636 269.661091zM809.122909 232.727273H218.158545l302.429091 248.017454L809.122909 232.727273z"
                         p-id="8405"></path>
                 </svg>
-                <a href="https://github.com/Mengbooo" target="_blank"><svg t="1716901624476" class="icon" viewBox="0 0 1024 1024" version="1.1"
-                    xmlns="http://www.w3.org/2000/svg" p-id="2561"> 
-                    <path
-                        d="M64 512c0 195.2 124.8 361.6 300.8 422.4 22.4 6.4 19.2-9.6 19.2-22.4v-76.8c-134.4 16-140.8-73.6-150.4-89.6-19.2-32-60.8-38.4-48-54.4 32-16 64 3.2 99.2 57.6 25.6 38.4 76.8 32 105.6 25.6 6.4-22.4 19.2-44.8 35.2-60.8-144-22.4-201.6-108.8-201.6-211.2 0-48 16-96 48-131.2-22.4-60.8 0-115.2 3.2-121.6 57.6-6.4 118.4 41.6 124.8 44.8 32-9.6 70.4-12.8 112-12.8 41.6 0 80 6.4 112 12.8 12.8-9.6 67.2-48 121.6-44.8 3.2 6.4 25.6 57.6 6.4 118.4 32 38.4 48 83.2 48 131.2 0 102.4-57.6 188.8-201.6 214.4 22.4 22.4 38.4 54.4 38.4 92.8v112c0 9.6 0 19.2 16 19.2C832 876.8 960 710.4 960 512c0-246.4-201.6-448-448-448S64 265.6 64 512z"
-                        p-id="2562"></path>
-                </svg></a>
+                <a href="https://github.com/Mengbooo" target="_blank"><svg t="1716901624476" class="icon"
+                        viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2561">
+                        <path
+                            d="M64 512c0 195.2 124.8 361.6 300.8 422.4 22.4 6.4 19.2-9.6 19.2-22.4v-76.8c-134.4 16-140.8-73.6-150.4-89.6-19.2-32-60.8-38.4-48-54.4 32-16 64 3.2 99.2 57.6 25.6 38.4 76.8 32 105.6 25.6 6.4-22.4 19.2-44.8 35.2-60.8-144-22.4-201.6-108.8-201.6-211.2 0-48 16-96 48-131.2-22.4-60.8 0-115.2 3.2-121.6 57.6-6.4 118.4 41.6 124.8 44.8 32-9.6 70.4-12.8 112-12.8 41.6 0 80 6.4 112 12.8 12.8-9.6 67.2-48 121.6-44.8 3.2 6.4 25.6 57.6 6.4 118.4 32 38.4 48 83.2 48 131.2 0 102.4-57.6 188.8-201.6 214.4 22.4 22.4 38.4 54.4 38.4 92.8v112c0 9.6 0 19.2 16 19.2C832 876.8 960 710.4 960 512c0-246.4-201.6-448-448-448S64 265.6 64 512z"
+                            p-id="2562"></path>
+                    </svg></a>
                 <svg t="1716823012734" class="icon" viewBox="0 0 1024 1024" version="1.1"
-                    xmlns="http://www.w3.org/2000/svg" p-id="11101">
+                    xmlns="http://www.w3.org/2000/svg" p-id="11101" @click="copyURL">
                     <path
                         d="M853.333333 533.333333a32 32 0 0 1 64 0v266.666667c0 64.8-52.533333 117.333333-117.333333 117.333333H224c-64.8 0-117.333333-52.533333-117.333333-117.333333V256c0-64.8 52.533333-117.333333 117.333333-117.333333h277.333333a32 32 0 0 1 0 64H224a53.333333 53.333333 0 0 0-53.333333 53.333333v544a53.333333 53.333333 0 0 0 53.333333 53.333333h576a53.333333 53.333333 0 0 0 53.333333-53.333333V533.333333z m-42.058666-277.333333l-89.792-95.402667a32 32 0 0 1 46.613333-43.861333l140.544 149.333333C927.861333 286.485333 913.376 320 885.333333 320H724.704C643.029333 320 576 391.210667 576 480v192a32 32 0 1 1-64 0V480c0-123.296 94.784-224 212.704-224h86.570667z"
                         p-id="11102"></path>
                 </svg>
+                <transition name="fade">
+                    <div class="copyInformation" v-if="isAlertShow_2">
+                        <svg t="1717159574270" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                            xmlns="http://www.w3.org/2000/svg" p-id="4263"
+                            data-spm-anchor-id="a313x.search_index.0.i0.4a633a81JOCT86">
+                            <path
+                                d="M720 192h-544A80.096 80.096 0 0 0 96 272v608C96 924.128 131.904 960 176 960h544c44.128 0 80-35.872 80-80v-608C800 227.904 764.128 192 720 192z m16 688c0 8.8-7.2 16-16 16h-544a16 16 0 0 1-16-16v-608a16 16 0 0 1 16-16h544a16 16 0 0 1 16 16v608z"
+                                p-id="4264"></path>
+                            <path
+                                d="M848 64h-544a32 32 0 0 0 0 64h544a16 16 0 0 1 16 16v608a32 32 0 1 0 64 0v-608C928 99.904 892.128 64 848 64z"
+                                p-id="4265"></path>
+                            <path
+                                d="M608 360H288a32 32 0 0 0 0 64h320a32 32 0 1 0 0-64zM608 520H288a32 32 0 1 0 0 64h320a32 32 0 1 0 0-64zM480 678.656H288a32 32 0 1 0 0 64h192a32 32 0 1 0 0-64z"
+                                p-id="4266"></path>
+                        </svg>
+                    </div>
+                </transition>
             </div>
             <div class="introContent">
                 <p class="introLine_1">Intro of demosite</p><br>
@@ -42,15 +77,56 @@
 </template>
 
 <script setup name="intro">
+import { ref } from 'vue'
 import tableStore from '../stores/table'
+import useClipboard from 'vue-clipboard3'
+
+const { toClipboard } = useClipboard()
+
 
 const closeintro = () => {
     tableStore().controlIntro();
 }
 
+let isAlertShow_1 = ref(false)
+let isAlertShow_2 = ref(false)
+
+function copyEmail() {
+    toClipboard('1564313622qq.com')
+    isAlertShow_1.value = true;
+    setTimeout(() => { isAlertShow_1.value = false }, 1000)
+}
+
+function copyURL() {
+    toClipboard('https://bemosite.fun')
+    isAlertShow_2.value = true;
+    setTimeout(() => { isAlertShow_2.value = false }, 1000)
+}
 </script>
 
 <style scoped>
+/* 淡入 */
+.fade-enter-from {
+    opacity: 0;
+}
+.fade-enter-to {
+    opacity: 1;
+}
+.fade-enter-active {
+    transition: opacity 1s ease-in-out;
+}
+
+/* 淡出 */
+.fade-leave-from {
+    opacity: 1;
+}
+.fade-leave-to {
+    opacity: 0;
+}
+.fade-leave-active {
+    transition: opacity 1s ease-in-out;
+}
+
 @keyframes changeColor_in {
     from {
         background-color: #141414;
@@ -127,20 +203,20 @@ svg:hover {
     justify-content: center;
 }
 
-.introContent p{
+.introContent p {
     color: #141414;
 }
 
 .introLine_1 {
     font-family: 'ChannelSlanted2';
-    font-size: 2.5vh;
+    font-size: 3.5vh;
     font-weight: bold;
     margin: 0;
 }
 
 .introLine_2 {
     font-family: 'Arial, Helvetica, sans-serif';
-    font-size: 1vh;
+    font-size: 1.3vh;
     font-weight: bold;
     margin: 0;
 }
@@ -148,7 +224,15 @@ svg:hover {
 .introLine_3 {
     margin: 0;
     font-family: 'ChannelSlanted2';
-    font-size: 2vh;
+    font-size: 2.5vh;
     font-weight: bold;
+}
+
+.copyInformation{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0%;
+    margin-left: 10vw;
 }
 </style>
