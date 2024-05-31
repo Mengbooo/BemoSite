@@ -80,11 +80,13 @@ let isIntro = computed(() => {
         opacity: 1
     }
 }
+
 .mainBody {
     display: flex;
     flex-direction: column;
     flex: space-warp;
 }
+
 .logoContainer {
     z-index: 2;
     position: absolute;
@@ -138,6 +140,7 @@ let isIntro = computed(() => {
 }
 
 .cardGroup {
+    animation: fade 1.5s ease-in-out;
     z-index: 0;
     width: 100%;
     position: fixed;
