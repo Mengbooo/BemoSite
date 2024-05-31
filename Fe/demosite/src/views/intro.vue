@@ -1,6 +1,5 @@
 <template>
     <div class="mask">
-
         <div class="introBox">
             <div class="mailContent">
                 <transition name="fade">

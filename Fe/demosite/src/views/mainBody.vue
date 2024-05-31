@@ -1,21 +1,24 @@
 <template>
-    <div class="logoContainer">
-        <a href="https://github.com/Mengbooo" target="_blank"><img src="../assets/logo.jpg" alt="Bolaxious'demosite" class="logo"></a>
+    <div class="mainBody">
+        <div class="logoContainer">
+            <a href="https://github.com/Mengbooo" target="_blank"><img src="../assets/logo.jpg" alt="Bolaxious'demosite"
+                    class="logo"></a>
+        </div>
+        <div class="cardGroup">
+            <cardGroup />
+        </div>
+        <div class="footer">
+            <p @click="openIntro">intro</p>
+            <p @click="controlScreen">{{ screenController }}</p>
+        </div>
+        <transition name="fade">
+            <intro v-if="isIntro" />
+        </transition>
     </div>
-    <div class="cardGroup">
-        <cardGroup />
-    </div>
-    <div class="footer">
-        <p @click="openIntro">intro</p>
-        <p @click="controlScreen">{{ screenController }}</p>
-    </div>
-    <transition name="fade">
-        <intro v-if="isIntro" />
-    </transition>
 </template>
 
 <script setup>
-import { ref,computed } from 'vue'
+import { ref, computed } from 'vue'
 import tableStore from '../stores/table'
 import intro from './intro.vue'
 import screenfull from "screenfull";
@@ -30,7 +33,7 @@ function controlScreen() {
         screenfull.exit();
         screenController.value = 'full screen';
     }
-} 
+}
 
 const openIntro = () => {
     tableStore().controlIntro();
@@ -42,14 +45,15 @@ let isIntro = computed(() => {
 </script>
 
 <style scoped>
-
 /* 淡入 */
 .fade-enter-from {
     opacity: 0;
 }
+
 .fade-enter-to {
     opacity: 1;
 }
+
 .fade-enter-active {
     transition: opacity 1s ease-in-out;
 }
@@ -58,12 +62,15 @@ let isIntro = computed(() => {
 .fade-leave-from {
     opacity: 1;
 }
+
 .fade-leave-to {
     opacity: 0;
 }
+
 .fade-leave-active {
     transition: opacity 1s ease-in-out;
 }
+
 @keyframes fade {
     from {
         opacity: 0
@@ -73,7 +80,11 @@ let isIntro = computed(() => {
         opacity: 1
     }
 }
-
+.mainBody {
+    display: flex;
+    flex-direction: column;
+    flex: space-warp;
+}
 .logoContainer {
     z-index: 2;
     position: absolute;
@@ -124,5 +135,15 @@ let isIntro = computed(() => {
 
 .footer p:hover {
     color: #03c192;
+}
+
+.cardGroup {
+    z-index: 0;
+    width: 100%;
+    position: fixed;
+    top: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 </style>
