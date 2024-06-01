@@ -1,20 +1,20 @@
 <template>
     <div class="levels">
         <div class="level one">
-            <div class="title">POKEMENG!</div>
-            <div class="content">2024/5/12</div>
+            <div class="content">POKEMENG!</div>
+            <div class="title">2024/5/12</div>
         </div>
         <div class="level two">
-            <div class="title">3D card</div>
-            <div class="content">2024/4/25</div>
+            <div class="content">3D card</div>
+            <div class="title">2024/4/25</div>
         </div>
         <div class="level three">
-            <div class="title">Disco!!!</div>
-            <div class="content">developing···</div>
+            <div class="content">Disco!!!</div>
+            <div class="title">developing···</div>
         </div>
         <div class="level four">
-            <div class="title">3D elements</div>
-            <div class="content">developing···</div>
+            <div class="content">3D elements</div>
+            <div class="title">developing···</div>
         </div>
 
     </div>
@@ -76,7 +76,7 @@
     position: absolute;
     top: 1.5vh;
     left: 2vh;
-    font-size: 2.3vh;
+    font-size: 1vh;
     font-weight: bold;
 }
 
@@ -85,7 +85,7 @@
     font-weight: 700;
     bottom: 1.5vh;
     left: 2vh;
-    font-size: 1vh;
+    font-size: 2.3vh;
 }
 
 .levels .level:hover {

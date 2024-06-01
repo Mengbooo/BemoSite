@@ -17,6 +17,7 @@
                                 d="M608 360H288a32 32 0 0 0 0 64h320a32 32 0 1 0 0-64zM608 520H288a32 32 0 1 0 0 64h320a32 32 0 1 0 0-64zM480 678.656H288a32 32 0 1 0 0 64h192a32 32 0 1 0 0-64z"
                                 p-id="4266"></path>
                         </svg>
+                        <p>copy!</p>
                     </div>
                 </transition>
                 <svg t="1716822844652" class="icon" viewBox="0 0 1024 1024" version="1.1"
@@ -52,6 +53,7 @@
                                 d="M608 360H288a32 32 0 0 0 0 64h320a32 32 0 1 0 0-64zM608 520H288a32 32 0 1 0 0 64h320a32 32 0 1 0 0-64zM480 678.656H288a32 32 0 1 0 0 64h192a32 32 0 1 0 0-64z"
                                 p-id="4266"></path>
                         </svg>
+                    <p>copy!</p>
                     </div>
                 </transition>
             </div>
@@ -195,7 +197,7 @@ svg:hover {
 }
 
 .introContent {
-    width: 25vw;
+    width: 35vw;
     height: 35vh;
     display: flex;
     flex-direction: column;
@@ -232,6 +234,16 @@ svg:hover {
     top: 50%;
     transform: translateY(-50%);
     left: 0%;
-    margin-left: 10vw;
+    margin-left: 8vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.copyInformation p{
+    margin-left: 0.5vh;
+    font-size: 1.5vh;
+    font-weight: bold;
+    color: #141414;
 }
 </style>
