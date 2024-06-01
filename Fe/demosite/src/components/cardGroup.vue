@@ -41,7 +41,6 @@
     height: 12vh;
     border-radius: 12px;
     color: var(--fontColor);
-    cursor: pointer;
     transition: all 0.4s ease;
     transform: rotateX(45deg) rotateY(-15deg) rotate(45deg);
     opacity: 0.9;
@@ -91,5 +90,7 @@
 .levels .level:hover {
     transform: rotateX(30deg) rotateY(-15deg) rotate(30deg) translate(-3vh, 6vh);
     opacity: 1;
+    outline: none;
 }
+
 </style>

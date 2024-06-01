@@ -4,9 +4,11 @@
             <a href="https://github.com/Mengbooo" target="_blank"><img src="../assets/logo.jpg" alt="Bolaxious'demosite"
                     class="logo"></a>
         </div>
-        <div class="cardGroup">
+        <transition name="fade">
+            <div class="cardGroup" v-show="!isIntro">
             <cardGroup />
         </div>
+        </transition>
         <div class="footer">
             <p @click="openIntro">intro</p>
             <p @click="controlScreen">{{ screenController }}</p>
