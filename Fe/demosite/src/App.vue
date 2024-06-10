@@ -1,12 +1,14 @@
 <template>
   <loading v-if="isLoading"/>
-  <mainBody v-if="!isLoading && isPCShow"/>
+  <router-view v-if="!isLoading && isPCShow"></router-view>
 </template>
-
+ 
 <script setup name="App">
 import { ref } from 'vue'
+
 import loading from '../src/views/loading.vue'
 import mainBody from '../src/views/mainBody.vue'
+import {RouterView} from 'vue-router'
 
 let isLoading = ref(true);
 let isPCShow = ref(false);
@@ -18,6 +20,8 @@ setTimeout(() => {
 
 </script>
 
-<style scoped>
-
+<style>
+  html,body {
+    cursor: url('../src/assets/cursor.png');
+  }
 </style>

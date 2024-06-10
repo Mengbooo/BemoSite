@@ -1,16 +1,16 @@
 <template>
     <div class="mainBody">
-        <div class="logoContainer">
-            <a href="https://github.com/Mengbooo" target="_blank"><img src="../assets/logo.jpg" alt="Bolaxious'demosite"
-                    class="logo"></a>
-        </div>
+      
         <transition name="fade">
             <div class="cardGroup" v-show="!isIntro">
-            <cardGroup />
-        </div>
+                <cardGroup />
+            </div>
         </transition>
         <div class="footer">
-            <p @click="openIntro">intro</p>
+            <p @click="openIntro">intro</p> 
+            <a href="https://github.com/Mengbooo" target="_blank" style="text-decoration: none;color: rgb(255, 255, 255);">
+                <p>github</p>
+            </a>
             <p @click="controlScreen">{{ screenController }}</p>
         </div>
         <transition name="fade">
@@ -26,14 +26,14 @@ import intro from './intro.vue'
 import screenfull from "screenfull";
 import cardGroup from '../components/cardGroup.vue'
 
-let screenController = ref('full screen');
+let screenController = ref('fullScreen');
 function controlScreen() {
     if (!screenfull.isFullscreen) {
         screenfull.request();
-        screenController.value = 'exit full screen';
+        screenController.value = 'exitFullScreen';
     } else {
         screenfull.exit();
-        screenController.value = 'full screen';
+        screenController.value = 'fullScreen';
     }
 }
 
@@ -127,8 +127,8 @@ let isIntro = computed(() => {
 }
 
 .footer p {
-    margin: 1vw 0.5vw;
-    color: #ffffff;
+    margin: 2vw 1vw;
+    color:rgb(255, 255, 255);
     font-size: 1.3vh;
     font-weight: 900;
     border: none;

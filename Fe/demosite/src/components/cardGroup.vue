@@ -1,28 +1,35 @@
 <template>
     <div class="levels">
-        <div class="level one">
-            <div class="content">POKEMENG!</div>
-            <div class="title">2024/5/12</div>
-        </div>
-        <div class="level two">
-            <div class="content">3D card</div>
-            <div class="title">2024/4/25</div>
-        </div>
-        <div class="level three">
-            <div class="content">Disco!!!</div>
-            <div class="title">developing···</div>
-        </div>
-        <div class="level four">
-            <div class="content">3D elements</div>
-            <div class="title">developing···</div>
-        </div>
-
+        <router-link to="/pokemeng">
+            <div class="level one">
+                <div class="content">POKEMENG!</div>
+                <div class="title">2024/5/12</div>
+            </div>
+        </router-link>
+        <router-link to="/card">
+            <div class="level two">
+                <div class="content">3D card</div>
+                <div class="title">2024/4/25</div>
+            </div>
+        </router-link>
+        <router-link to="/disco">
+            <div class="level three">
+                <div class="content">Disco!!!</div>
+                <div class="title">developing···</div>
+            </div>
+        </router-link>
+        <router-link to="/elements">
+            <div class="level four">
+                <div class="content">3D elements</div>
+                <div class="title">developing···</div>
+            </div>
+        </router-link>
     </div>
 
 </template>
 
 <script setup name="cardGroup">
-
+import { RouterLink } from 'vue-router';
 </script>
 
 <style scoped>
@@ -88,9 +95,8 @@
 }
 
 .levels .level:hover {
-    transform: rotateX(30deg) rotateY(-15deg) rotate(30deg) translate(-3vh, 6vh);
+    transform: rotateX(30deg) rotateY(15deg) rotate(30deg) translate(-3vh, 6vh);
     opacity: 1;
     outline: none;
 }
-
 </style>
