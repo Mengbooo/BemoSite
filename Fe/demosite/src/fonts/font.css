@@ -1,0 +1,24 @@
+@font-face {
+    font-family: 'Hana';  
+    src: url('./HanaleiFill-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Holt';  
+    src: url('./HoltwoodOneSC.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Shadow';  
+    src: url('./ShadowsIntoLight.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Kira';  
+    src: url('./KirangHaerang-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+}

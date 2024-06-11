@@ -2,24 +2,6 @@
     <div class="mask">
         <div class="introBox">
             <div class="mailContent">
-                <transition name="fade">
-                    <div class="copyInformation" v-if="isAlertShow_1">
-                        <svg t="1717159574270" class="icon" viewBox="0 0 1024 1024" version="1.1"
-                            xmlns="http://www.w3.org/2000/svg" p-id="4263"
-                            data-spm-anchor-id="a313x.search_index.0.i0.4a633a81JOCT86">
-                            <path
-                                d="M720 192h-544A80.096 80.096 0 0 0 96 272v608C96 924.128 131.904 960 176 960h544c44.128 0 80-35.872 80-80v-608C800 227.904 764.128 192 720 192z m16 688c0 8.8-7.2 16-16 16h-544a16 16 0 0 1-16-16v-608a16 16 0 0 1 16-16h544a16 16 0 0 1 16 16v608z"
-                                p-id="4264"></path>
-                            <path
-                                d="M848 64h-544a32 32 0 0 0 0 64h544a16 16 0 0 1 16 16v608a32 32 0 1 0 64 0v-608C928 99.904 892.128 64 848 64z"
-                                p-id="4265"></path>
-                            <path
-                                d="M608 360H288a32 32 0 0 0 0 64h320a32 32 0 1 0 0-64zM608 520H288a32 32 0 1 0 0 64h320a32 32 0 1 0 0-64zM480 678.656H288a32 32 0 1 0 0 64h192a32 32 0 1 0 0-64z"
-                                p-id="4266"></path>
-                        </svg>
-                        <p>copy!</p>
-                    </div>
-                </transition>
                 <svg t="1716822844652" class="icon" viewBox="0 0 1024 1024" version="1.1"
                     xmlns="http://www.w3.org/2000/svg" p-id="8404" @click="copyEmail">
                     <path
@@ -38,32 +20,14 @@
                         d="M853.333333 533.333333a32 32 0 0 1 64 0v266.666667c0 64.8-52.533333 117.333333-117.333333 117.333333H224c-64.8 0-117.333333-52.533333-117.333333-117.333333V256c0-64.8 52.533333-117.333333 117.333333-117.333333h277.333333a32 32 0 0 1 0 64H224a53.333333 53.333333 0 0 0-53.333333 53.333333v544a53.333333 53.333333 0 0 0 53.333333 53.333333h576a53.333333 53.333333 0 0 0 53.333333-53.333333V533.333333z m-42.058666-277.333333l-89.792-95.402667a32 32 0 0 1 46.613333-43.861333l140.544 149.333333C927.861333 286.485333 913.376 320 885.333333 320H724.704C643.029333 320 576 391.210667 576 480v192a32 32 0 1 1-64 0V480c0-123.296 94.784-224 212.704-224h86.570667z"
                         p-id="11102"></path>
                 </svg>
-                <transition name="fade">
-                    <div class="copyInformation" v-if="isAlertShow_2">
-                        <svg t="1717159574270" class="icon" viewBox="0 0 1024 1024" version="1.1"
-                            xmlns="http://www.w3.org/2000/svg" p-id="4263"
-                            data-spm-anchor-id="a313x.search_index.0.i0.4a633a81JOCT86">
-                            <path
-                                d="M720 192h-544A80.096 80.096 0 0 0 96 272v608C96 924.128 131.904 960 176 960h544c44.128 0 80-35.872 80-80v-608C800 227.904 764.128 192 720 192z m16 688c0 8.8-7.2 16-16 16h-544a16 16 0 0 1-16-16v-608a16 16 0 0 1 16-16h544a16 16 0 0 1 16 16v608z"
-                                p-id="4264"></path>
-                            <path
-                                d="M848 64h-544a32 32 0 0 0 0 64h544a16 16 0 0 1 16 16v608a32 32 0 1 0 64 0v-608C928 99.904 892.128 64 848 64z"
-                                p-id="4265"></path>
-                            <path
-                                d="M608 360H288a32 32 0 0 0 0 64h320a32 32 0 1 0 0-64zM608 520H288a32 32 0 1 0 0 64h320a32 32 0 1 0 0-64zM480 678.656H288a32 32 0 1 0 0 64h192a32 32 0 1 0 0-64z"
-                                p-id="4266"></path>
-                        </svg>
-                    <p>copy!</p>
-                    </div>
-                </transition>
             </div>
             <div class="introContent">
-                <p class="introLine_1">Intro of demosite</p><br>
+                <p class="introLine_1">Intro of demosite😋</p><br>
                 <p class="introLine_2">This is my front-end demo collection site, thanks to the inspiration from CMISCM,
                     which gave me the motivation to create this web page. I'm going to be putting some of my demos on
-                    this site gradually, um, well, it should be, right? If you like this site,please share it!</p>
+                    this site gradually, um, well, it should be, right? If you like this site,please share it! &#129409🍟🍟🍟</p>
                 <br>
-                <p class="introLine_3">Thanks for your Visiting!</p>
+                <p class="introLine_3">Thanks for your Visiting!🤗</p>
             </div>
             <div class="closeBtn" @click="closeintro">
                 <svg t="1716823158878" class="icon" viewBox="0 0 1024 1024" version="1.1"
@@ -156,7 +120,7 @@ function copyURL() {
     height: 100%;
     background-color: rgba(3, 193, 146, 0.5);
     animation: changeColor_in 1s ease-in-out;
-    z-index: 1;
+    z-index: -999;
     display: flex;
     align-items: center;
 }
@@ -197,7 +161,7 @@ svg:hover {
 }
 
 .introContent {
-    width: 35vw;
+    width: 55vw;
     height: 35vh;
     display: flex;
     flex-direction: column;
@@ -209,22 +173,22 @@ svg:hover {
 }
 
 .introLine_1 {
-    font-family: 'ChannelSlanted2';
+    font-family: 'Hana';
     font-size: 3.5vh;
     font-weight: bold;
     margin: 0;
 }
 
 .introLine_2 {
-    font-family: 'Arial, Helvetica, sans-serif';
-    font-size: 1.3vh;
+    font-family: 'Kira';
+    font-size: 2.3vh;
     font-weight: bold;
     margin: 0;
 }
 
 .introLine_3 {
     margin: 0;
-    font-family: 'ChannelSlanted2';
+    font-family: 'Hana';
     font-size: 2.5vh;
     font-weight: bold;
 }
