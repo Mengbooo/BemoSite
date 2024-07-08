@@ -1,200 +1,104 @@
 <template>
     <div class="mainBody">
-        <nav class="header">
-            <div class="headerLogo">
-                <img src="../assets/logo.jpg" alt="">
-                <p>Bemosite.</p>
+        <div class="nav">
+            <div class="logo">
+                <img src="../assets/2D/logo.jpg" alt="">
             </div>
-            <div class="headerContent">
-                <div @click="openIntro">intro</div>
-                <div><a href="https://github.com/Mengbooo" target="_blank"
-                        style="text-decoration: none;color: rgb(255, 255, 255);">
-                        <div>github</div>
-                    </a></div>
-                <div @click="controlScreen">{{ screenController }}</div>
+            <div class="menu">
+
             </div>
-        </nav>
-        <transition name="fade">
-            <div class="cardGroup" v-show="!isIntro">
-                <cardGroup />
-            </div>
-        </transition>
-        <div class="footer">
-            <scrollAnimation />
         </div>
-        <transition name="fade">
-            <intro v-if="isIntro" />
-        </transition>
+        <div class="introBox">
+            <p>HI&nbsp;&nbsp; THERE.</p>
+            <p>WELC🤩ME&nbsp;&nbsp;T😘</p>
+            <p class="siteName">BEM🍟SITE.</p>
+            <p class="shortIntro one">this is 🅰️ website</p>
+            <p class="shortIntro two">of <a href="https://github.com/Mengbooo" target="_blank" class="name">bolaxious</a></p>
+            <p class="shortIntro three">it ©️olle©️tions part of demos</p>
+            <p class="shortIntro four">to show the fe path🔱.</p>
+        </div>
+        <div class="foot">
+
+        </div>
+    </div>
+    <div class="emojiScroller">
+        <emojiScroller />
     </div>
 </template>
 
 <script setup>
-import { ref, computed } from 'vue'
-import tableStore from '../stores/table'
-import intro from './intro.vue'
-import scrollAnimation from '../components/scrollAnimation.vue'
-import screenfull from "screenfull";
-import cardGroup from '../components/cardGroup.vue'
-
-let screenController = ref('fullScreen');
-function controlScreen() {
-    if (!screenfull.isFullscreen) {
-        screenfull.request();
-        screenController.value = 'exitFullScreen';
-    } else {
-        screenfull.exit();
-        screenController.value = 'fullScreen';
-    }
-}
-
-const openIntro = () => {
-    tableStore().controlIntro();
-}
-
-let isIntro = computed(() => {
-    return tableStore().isIntro;
-});
+import emojiScroller from '../components/emojiScroller.vue'
 </script>
 
-<style scoped>
-/* 淡入 */
-.fade-enter-from {
-    opacity: 0;
+
+<style scoped lang="less">
+a{
+    text-decoration: none;
 }
-
-.fade-enter-to {
-    opacity: 1;
-}
-
-.fade-enter-active {
-    transition: opacity 1s ease-in-out;
-}
-
-/* 淡出 */
-.fade-leave-from {
-    opacity: 1;
-}
-
-.fade-leave-to {
-    opacity: 0;
-}
-
-.fade-leave-active {
-    transition: opacity 1s ease-in-out;
-}
-
-@keyframes fade {
-    from {
-        opacity: 0
-    }
-
-    to {
-        opacity: 1
-    }
-}
-
 .mainBody {
+    user-select: none;
+    background-color: rgb(0, 0, 0);
     display: flex;
+    align-items: center;
     flex-direction: column;
-    flex: space-warp;
-}
 
-.logoContainer {
-    z-index: 2;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    user-select: none;
-    padding-top: 8vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    animation: fade 1s ease-in-out;
-}
+    .nav {
+        margin-top: 1vw;
+        width: 90vw;
+        display: flex;
 
-.logo {
-    width: 6vh;
-    border-radius: 10%;
-    filter: drop-shadow(0 0 0 #0030e4);
-    transition: filter 0.5s ease-in-out;
-}
+        .logo img {
+            width: 4vw;
+            height: auto;
+            border-radius: 20%;
+        }
+    }
 
-.logo:hover {
-    filter: drop-shadow(0 0 2em #0030e4);
-}
+    .introBox {
+        width: 90vw;
 
-.header {
-    background-color: rgba(red, green, blue, 0);
-    z-index: 1;
-    user-select: none;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: absolute;
-    width: 100vw;
-    height: 8vh;
-    top: 1%;
-    left: 50%;
-    transform: translateX(-50%);
-    animation: fade 1.5s ease-in-out;
-}
-.headerLogo{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 2vw;
-}
-.headerLogo img{
-    width: 4vh;
-    height: auto; 
-    border-radius: 15px;
-    margin: 0 2vw;
-}
-.headerLogo p{
-    font-family: 'Hana';
-    font-size: 2.5vh;
-    color: rgb(0, 0, 0);
-}
+        p {
+            font-family: Monoton;
+            line-height: 0%;
+            font-size: 8vw;
+            color: rgb(255, 255, 255);
+        }
 
-.headerContent {
-    display: flex;
-    padding: 2vw 1vw;
-    font-size: 1.5vh;
-    font-weight: 900;
-    border-radius: 2.5vw;
-    background-color: rgba(0, 0, 0 ,0);
-    transition: color 0.5s ease-in-out;
-    font-family: 'Holt';
-    margin: 0 2vw;
-    height: 3vh;
-}
+        .name {
+            filter: blur(5px);
+            font-size: 3vw;
+            color: rgb(236, 25, 255);
+            transition: all 0.5s ease-in-out;
+        }
 
-.headerContent div {
-    font-size: 1.5vh;
-    color: #000000;
-    margin: auto 1vw;
-    transition: 0.5s ease-in-out;
-}
+        .name:hover {
+            cursor: pointer;
+            filter: blur(0);
+            color: rgb(109, 255, 25);
+            transition: all 0.5s ease-in-out;
+        }
 
-.headerContent div:hover {
-    color: #03c192;
-}
+        .siteName {
+            color: rgb(10, 244, 166);
+            font-size: 11vw;
+        }
 
-.footer {
-    animation: fade 1.5s ease-in-out;
-    position: absolute;
-    bottom: 2%;
-    width: 100vw;
-    height: auto;
-}
-.cardGroup {
-    animation: fade 1.5s ease-in-out;
-    z-index: 0;
-    width: 100%;
-    position: fixed;
-    top: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+        .shortIntro {
+            color: rgb(255, 255, 255);
+            font-size: 5vw;
+            &.one {color: rgb(255, 218, 35);}
+            &.two {color: rgb(64, 63, 75);}
+            &.three {color: rgb(15, 208, 247);}
+            &.four {color: rgb(215, 108, 199);}
+        }
+ 
+    }
+
+    .emojiScroller {
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+        height: 100px;
+    }
 }
 </style>
