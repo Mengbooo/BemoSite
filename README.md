@@ -5,5 +5,5 @@
 ---
 ### 进度
 **仍在开发中**
-**目前部署在了<https:bemosite.fun>**<br>
+**目前部署在了<https://bemosite.fun>**<br>
 **目前仍未优化，故此加载很慢**
