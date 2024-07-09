@@ -28,7 +28,7 @@
 <style scoped>
 .wrapper {
     width: 90%;
-    max-width: 100vw;
+    max-width: 95vw;
     height: 7vh;
     margin-top: 2vh;
     position: relative;
@@ -60,21 +60,24 @@
     border-radius: 6px;
     position: absolute;
     animation-timing-function: linear;
-    animation-duration: 30s;
     animation-iteration-count: infinite;
     display: flex;
     align-items: center;
     justify-content: center;
+    animation-duration: 30s;
+
 }
 
 .itemLeft {
     left: max(calc(15vw * 8), 100%);
     animation-name: scrollLeft;
+
 }
 
 .itemRight {
     right: max(calc(15vw * 8), calc(100% + 15vw));
     animation-name: scrollRight;
+
 }
 
 .item1 {
