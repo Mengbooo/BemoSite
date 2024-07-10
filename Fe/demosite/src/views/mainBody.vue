@@ -25,11 +25,11 @@
     <div class="infoBox">
         <div class="demoInfo">
             <div class="demoImg">
-                <img src="../assets/3D/Noise Lights - Copy@6-1707x948.png" alt="">
+                <img src="../assets/3D/Instagram post - 1.png" alt="">
             </div>
             <div class="demoText">
                 "&nbsp;&nbsp;only bemo can do it&nbsp;&nbsp;"<br>
-                demo
+                about demo
             </div>
 
         </div>
@@ -64,7 +64,8 @@
         <div class="designIntro">
             <div class="intro">
                 <div class="designContent">
-                    I think that as a good front-end engineer, you must have certain design skills. I'm constantly
+                    🍔I think that as a good front-end engineer, you must have certain design skills.
+                    <br>🍟I'm constantly
                     learning and trying to create my own design collection while I'm in college
                 </div>
                 <div class="designImg">
@@ -83,14 +84,33 @@
                 云深山坞，烟冷江皋，人生未易相逢
             </div>
         </div>
-        <div class="ULinkPart">
-            <div class="ULinkIntro">
-                ❤️‍🔥You can't go without friends on the way forward, and here are part of the people I have met who are also mentors and friends, and thanks them for their help and encouragement😸
-            </div>
-        </div>
         <div class="Ucards">
             <Ucards />
         </div>
+    </div>
+    <div class="summaryBox">
+        <div class="summaryImg">
+            <img src="../assets/3D/Instagram post - 3.png" alt="">
+        </div>
+        <div class="summaryText">
+            why I write this site?<br>
+            I want to have my own blog site in my sophomore year.
+            So this 'bemosite' is my little world and practice projects,
+            and I want this site to record some of my demos and record my growth
+        </div>
+    </div>
+    <div class="emojiScroller">
+        <emojiScroller />
+    </div>
+    <div class="byeBox">
+        <div class="byeInfo">
+            <span>ByeBye!</span><br>
+            if you want to contact me, you can send email to me at <br>
+            <span>bo156431362@outlook.com</span>
+        </div>
+    </div>
+    <div class="emojiScroller">
+        <emojiScroller />
     </div>
 </template>
 
@@ -181,7 +201,7 @@ a {
         width: 95vw;
         overflow: hidden;
         position: relative;
-        height: 100px;
+        height: 20vh;
     }
 }
 
@@ -294,6 +314,13 @@ a {
                 display: block;
                 padding: 1vw 0;
                 color: rgb(255, 255, 255);
+                border-radius: 10px;
+                transition: all 0.3s ease-in-out;
+            }
+
+            .demoBtn:hover {
+                background-color: rgb(255, 255, 255);
+                transition: all 0.3s ease-in-out;
             }
 
             .intro3 {
@@ -395,7 +422,7 @@ a {
 
         .ULinkText {
             background-color: rgba(0, 0, 0, 0);
-            color: rgb(255, 255, 255);
+            color: rgb(38, 5, 95);
             position: absolute;
             top: 80%;
             left: 50%;
@@ -406,32 +433,79 @@ a {
             font-size: 5vw;
             opacity: 1;
             transition: all 0.5s ease-in-out;
-
         }
-    }
 
-
-    .ULinkPart {
-        width: 90vw;
-        display: flex;
-        justify-content: baseline;
-        align-items: center;
-
-        .ULinkIntro {
-            font-family: Monoton;
-            font-size: 2.5vw;
-            color: rgb(95, 60, 239);
-            transition: all 0.3s ease-in-out;
-
-        }
-        .ULinkIntro:hover {
+        .ULinkText:hover {
             color: rgb(40, 26, 235);
-            transition: all 0.3s ease-in-out;
+            transition: all 0.5s ease-in-out;
         }
     }
 
     .Ucards {
         height: 100vh;
+    }
+}
+
+.summaryBox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    .summaryImg {
+        height: auto;
+        position: relative;
+        z-index: 1;
+
+        img {
+            filter: blur(5px);
+            transition: all 0.5s ease-in-out;
+            width: 90vw;
+            height: auto;
+        }
+
+        img:hover {
+            filter: blur(0);
+            transition: all 0.5s ease-in-out;
+        }
+    }
+
+    .summaryText {
+        background-color: rgba(0, 0, 0, 0);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+        text-align: center;
+        font-family: Bungee;
+        color: #9dff0b;
+        font-size: 2vw;
+        opacity: 1;
+        transition: all 0.5s ease-in-out;
+
+    }
+
+    .demoText:hover {
+        opacity: 0;
+        transition: all 0.5s ease-in-out;
+    }
+}
+
+.byeBox {
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content:baseline;
+    span{
+        font-size: 5vw;
+        color: #9dff0b;
+    }
+    .byeInfo {
+        color: rgb(255, 255, 255);
+        font-size: 2vw;
+        font-family: Monoton;
     }
 }
 </style>
