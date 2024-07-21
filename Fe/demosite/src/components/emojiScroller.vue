@@ -27,8 +27,8 @@
 
 <style scoped>
 .wrapper {
-    width: 90%;
-    max-width: 95vw;
+    width: 90vw;
+    max-width: 90vw;
     height: 7vh;
     margin-top: 2vh;
     position: relative;
@@ -54,6 +54,7 @@
 
 .itemLeft,
 .itemRight {
+    font-size: 3vw;
     width: 15vw;
     height: 6vh;
     background-color: #000000;
@@ -65,7 +66,11 @@
     align-items: center;
     justify-content: center;
     animation-duration: 30s;
-
+    transition: all 0.5s ease-in-out;
+    &:hover {
+        font-size: 2vw;
+        transition: all 0.5s ease-in-out;
+    }
 }
 
 .itemLeft {

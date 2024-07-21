@@ -5,12 +5,31 @@
                 <img src="../assets/2D/logo.jpg" alt="">
             </div>
             <div class="menu">
-
+                <router-link to="/demos">
+                    <div class="menuBtn">
+                        demos
+                    </div>
+                </router-link>
+                <router-link to="/design">
+                    <div class="menuBtn">
+                        design
+                    </div>
+                </router-link>
+                <router-link to="/ulink">
+                    <div class="menuBtn">
+                        ulink
+                    </div>
+                </router-link>
+                <router-link to="/developing">
+                    <div class="menuBtn">
+                        developingMore···
+                    </div>
+                </router-link>
             </div>
         </div>
         <div class="introBox">
-            <p>HI&nbsp;&nbsp; THERE.</p>
-            <p>WELC🤩ME&nbsp;&nbsp;T😘 my</p>
+            <p class="Hello">HI&nbsp;&nbsp; THERE.</p>
+            <p class="Welcome">WELC🤩ME&nbsp;&nbsp;T😘 my</p>
             <p class="siteName">BEM🍟SITE.</p>
             <p class="shortIntro one">this is 🅰️ website</p>
             <p class="shortIntro two">of <a href="https://github.com/Mengbooo" target="_blank"
@@ -51,7 +70,7 @@
             </div>
         </div>
         <div class="designInfo">
-            <div class="logo">
+            <div class="logo2">
                 <img src="../assets/2D/logo.jpg" alt="">
             </div>
             <div class="designSlogan">
@@ -104,9 +123,9 @@
     </div>
     <div class="byeBox">
         <div class="byeInfo">
-            <span>ByeBye!</span><br>
-            if you want to contact me, you can send email to me at <br>
-            <span>bo156431362@outlook.com</span>
+            <span>Ciallo～(∠・ω< )⌒☆</span><br>
+                    if you want to contact me, you can send email to me at <br>
+                    <span class="byeEmail">bo156431362@outlook.com</span>
         </div>
     </div>
     <div class="emojiScroller">
@@ -137,11 +156,32 @@ a {
         margin-top: 1vw;
         width: 90vw;
         display: flex;
+        justify-content: space-between;
+        align-items: center;
 
         .logo img {
-            width: 4vw;
+            width: 5vh;
             height: auto;
-            border-radius: 20%;
+            border-radius: 10px;
+        }
+
+        .menu {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .menuBtn {
+                font-size: 1vw;
+                font-family: Monoton;
+                margin: 0 5vw;
+                color: rgb(96, 239, 74);
+                transition: all 0.5s ease-in-out;
+            }
+
+            .menuBtn:hover {
+                color: rgb(219, 0, 0);
+                transition: all 0.5s ease-in-out;
+            }
         }
     }
 
@@ -165,13 +205,43 @@ a {
         .name:hover {
             cursor: pointer;
             filter: blur(0);
-            color: rgb(109, 255, 25);
+            color: rgb(94, 255, 0);
+            transition: all 0.5s ease-in-out;
+        }
+
+        .Hello {
+            color: rgb(37, 0, 138);
+            transition: all 0.5s ease-in-out;
+        }
+
+        .Hello:hover {
+            filter: drop-shadow(0px 0px 10px #29ce1a);
+            transition: all 0.5s ease-in-out;
+        }
+
+        .Welcome {
+            color: rgb(255, 0, 217);
+            transition: all 0.5s ease-in-out;
+
+        }
+
+        .Welcome:hover {
+            filter: drop-shadow(0px 0px 10px #ffffff);
             transition: all 0.5s ease-in-out;
         }
 
         .siteName {
+            filter: sepia(100%) blur(5px);
             color: rgb(10, 244, 166);
             font-size: 11vw;
+            transition: all 1s ease-in-out;
+
+        }
+
+        .siteName:hover {
+            filter: sepia(0) blur(0);
+            transition: all 1s ease-in-out;
+
         }
 
         .shortIntro {
@@ -319,7 +389,8 @@ a {
             }
 
             .demoBtn:hover {
-                background-color: rgb(255, 255, 255);
+                filter: brightness(90%);
+                filter: drop-shadow(0px 0px 10px #29ce1a);
                 transition: all 0.3s ease-in-out;
             }
 
@@ -349,14 +420,14 @@ a {
         align-items: center;
         justify-content: center;
 
-        .logo {
+        .logo2 {
             background-color: rgba(0, 0, 0, 0);
             width: 4vw;
             height: 4vw;
             margin-right: 1vw;
         }
 
-        .logo img {
+        .logo2 img {
             width: 4vw;
             height: auto;
             border-radius: 20%;
@@ -458,7 +529,7 @@ a {
         z-index: 1;
 
         img {
-            filter: blur(5px);
+            filter: blur(10px);
             transition: all 0.5s ease-in-out;
             width: 90vw;
             height: auto;
@@ -479,7 +550,7 @@ a {
         z-index: 2;
         text-align: center;
         font-family: Bungee;
-        color: #9dff0b;
+        color: #ffaad2;
         font-size: 2vw;
         opacity: 1;
         transition: all 0.5s ease-in-out;
@@ -497,15 +568,30 @@ a {
     margin-bottom: 10vh;
     display: flex;
     align-items: center;
-    justify-content:baseline;
-    span{
+    justify-content: center;
+
+    span {
         font-size: 5vw;
         color: #9dff0b;
     }
+
     .byeInfo {
         color: rgb(255, 255, 255);
         font-size: 2vw;
+        width: 90vw;
         font-family: Monoton;
+
+        .byeEmail {
+            border-radius: 15px;
+            color: #9dff0b;
+            transition: all 0.5s ease-in-out;
+        }
+
+        .byeEmail:hover {
+            filter: drop-shadow(0px 0px 10px #9dff0b);
+            color: #e7420b;
+            transition: all 0.5s ease-in-out;
+        }
     }
 }
 </style>
