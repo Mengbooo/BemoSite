@@ -36,7 +36,7 @@
             </a>
         </div>
         <div class="card" style="--i: 1;">
-            <a href="#" target="_blank">
+            <a href="https://github.com/yqcjq" target="_blank">
                 <div class="name">
                     🍊
                 </div>
@@ -73,7 +73,7 @@
 <style scoped>
 .container {
     width: 90vw;
-    height: 100vh;
+    height: 90vh;
     display: flex;
     justify-content: center;
     align-items: center;

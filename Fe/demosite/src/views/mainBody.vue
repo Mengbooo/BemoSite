@@ -171,6 +171,8 @@ a {
             align-items: center;
 
             .menuBtn {
+                padding:1vw;
+                border-radius: 5px;
                 font-size: 1vw;
                 font-family: Monoton;
                 margin: 0 5vw;
@@ -179,6 +181,7 @@ a {
             }
 
             .menuBtn:hover {
+                filter: drop-shadow(0px 0px 10px #f53513);
                 color: rgb(219, 0, 0);
                 transition: all 0.5s ease-in-out;
             }
