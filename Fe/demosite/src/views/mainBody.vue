@@ -137,6 +137,8 @@
 import emojiScroller from '../components/emojiScroller.vue'
 import textScoller from '../components/textScroller.vue'
 import Ucards from '../components/Ucards.vue'
+import { onMounted } from 'vue';
+
 </script>
 
 
