@@ -165,13 +165,6 @@ gsap.registerPlugin();
 </script>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-GGRF8Q93K5"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-GGRF8Q93K5');
-</script>
 
 <style scoped lang="less">
 a {
