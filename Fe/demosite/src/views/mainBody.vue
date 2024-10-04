@@ -163,9 +163,6 @@ function rotateDemoImg() {
 // 初始化 GSAP 插件
 gsap.registerPlugin(); 
 </script>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-GGRF8Q93K5"></script>
-
 <style scoped lang="less">
 a {
     text-decoration: none;
