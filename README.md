@@ -1,9 +1,5 @@
 ## Bemosite
-### 开发与设计
+### website of developing & designing
 ![image](https://github.com/Mengbooo/BemoSite/assets/143786942/a38787dc-dbb3-44fe-8708-2868bc61f82b)
-
 ---
-### 进度
-**仍在开发中**
-**目前部署在了<https://bemosite.fun>**<br>
-**目前仍未优化，故此 初次加载比较慢**
+This is my first personal website. It has few functions and the code is messy, but it is also of commemorative significance and fun. I may develop a second version of the blog in the future. What will happen then? I am looking forward to it.
