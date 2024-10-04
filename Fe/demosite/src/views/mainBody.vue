@@ -42,15 +42,14 @@
         <emojiScroller />
     </div>
     <div class="infoBox">
-        <div class="demoInfo">
-            <div class="demoImg">
-                <img src="../assets/3D/Instagram post - 1.png" alt="">
+        <div class="demoInfo" @click="rotateDemoImg">
+            <div class="demoImg" >
+                <img src="../assets/3D/Instagram post - 1.png" alt="" :style="{ transform: `rotate(${rotationAngle}deg)` }" ref="demoImg">
             </div>
             <div class="demoText">
                 "&nbsp;&nbsp;only bemo can do it&nbsp;&nbsp;"<br>
                 about demo
             </div>
-
         </div>
         <div class="demoRoad">
             <img src="../assets/3D/7.png" alt="">
@@ -137,10 +136,42 @@
 import emojiScroller from '../components/emojiScroller.vue'
 import textScoller from '../components/textScroller.vue'
 import Ucards from '../components/Ucards.vue'
-import { onMounted } from 'vue';
+import { onMounted,ref } from 'vue';
+import { gsap } from 'gsap';
 
+// 使用 ref 来管理旋转角度
+const rotationAngle = ref(0);
+const demoImg = ref(null);
+
+function rotateDemoImg() {
+    if (!demoImg.value) return;
+
+    // 更新旋转角度
+    rotationAngle.value += 90;
+
+    // 使用 GSAP 创建动画
+    gsap.to(demoImg.value, {
+        rotation: rotationAngle.value,
+        duration: 1,
+        ease: 'power1.inOut',
+        onComplete: () => {
+            // 动画完成后的处理逻辑（如果有）
+        }
+    });
+}
+
+// 初始化 GSAP 插件
+gsap.registerPlugin(); 
 </script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GGRF8Q93K5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
+  gtag('config', 'G-GGRF8Q93K5');
+</script>
 
 <style scoped lang="less">
 a {
@@ -173,7 +204,7 @@ a {
             align-items: center;
 
             .menuBtn {
-                padding:1vw;
+                padding: 1vw;
                 border-radius: 5px;
                 font-size: 1vw;
                 font-family: Monoton;

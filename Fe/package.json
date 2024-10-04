@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "gasp": "^0.0.2",
     "vite": "^5.2.11"
   }
 }
