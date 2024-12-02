@@ -1,7 +1,8 @@
 <template>
     <div class="introBody">
+        <div data-app-container></div>
         <div class="nav">
-            <div class="logo">
+            <div class="logo" id="logo">
                 <img src="../assets/2D/logo.jpg" alt="">
             </div>
             <div class="menu">
@@ -43,8 +44,9 @@
     </div>
     <div class="infoBox">
         <div class="demoInfo" @click="rotateDemoImg">
-            <div class="demoImg" >
-                <img src="../assets/3D/Instagram post - 1.png" alt="" :style="{ transform: `rotate(${rotationAngle}deg)` }" ref="demoImg">
+            <div class="demoImg">
+                <img src="../assets/3D/Instagram post - 1.png" alt=""
+                    :style="{ transform: `rotate(${rotationAngle}deg)` }" ref="demoImg">
             </div>
             <div class="demoText">
                 "&nbsp;&nbsp;only bemo can do it&nbsp;&nbsp;"<br>
@@ -124,7 +126,8 @@
         <div class="byeInfo">
             <span>Ciallo～(∠・ω< )⌒☆</span><br>
                     if you want to contact me, you can send email to me at <br>
-                    <span class="byeEmail">bo156431362@outlook.com</span>
+                    <span class="byeEmail">bo156431362@outlook.com</span><br>
+                    <span class="byeEmail">and here is my blog，welcome to visit！</span><br><span class="byeEmail"><a href="http://bemosite.com">bemosite</a></span>
         </div>
     </div>
     <div class="emojiScroller">
@@ -136,8 +139,13 @@
 import emojiScroller from '../components/emojiScroller.vue'
 import textScoller from '../components/textScroller.vue'
 import Ucards from '../components/Ucards.vue'
-import { onMounted,ref } from 'vue';
+import * as THREE from 'three'
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
+import { onMounted, ref } from 'vue';
 import { gsap } from 'gsap';
+import { Draggable } from 'gsap/Draggable';
+// Register GSAP plugins
+gsap.registerPlugin(Draggable)
 
 // 使用 ref 来管理旋转角度
 const rotationAngle = ref(0);
@@ -160,8 +168,13 @@ function rotateDemoImg() {
     });
 }
 
-// 初始化 GSAP 插件
-gsap.registerPlugin(); 
+Draggable.create('logo', {
+    type: "rotation",
+    onClick: function () {
+        console.log("clicked");
+    },
+})
+
 </script>
 <style scoped lang="less">
 a {
